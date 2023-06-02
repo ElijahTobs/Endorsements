@@ -30,6 +30,8 @@ h3 {
 textarea {
   padding: 5px 15px;
   margin-bottom: 10px;
+  border-radius: 7px;
+  font-size: 18px;
 }
 
 .inputs {
@@ -39,6 +41,9 @@ textarea {
 
 #from, #to {
   padding: 10px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  
 }
 
 button {
