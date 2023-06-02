@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
@@ -32,14 +32,19 @@ function clearinputFieldEl(){
 }
 
 onValue(endorsementsInDB, (snapshot)=>{
-  let endorsementArr = Object.entries(snapshot.val())
-  clearListEl()
+  if (snapshot.exists()){
+    let endorsementArr = Object.entries(snapshot.val())
+    clearListEl()
 
-  for (let x in endorsementArr){
-    let currentItem = endorsementArr[x]
+    for (let x in endorsementArr){
+      let currentItem = endorsementArr[x]
 
-    appendToListEl(currentItem)
+      appendToListEl(currentItem)
+    }
+  } else {
+    endorsementListEl.innerHTML = `<p>No endorsements here yet...</p>`
   }
+ 
 })
 
 function appendToListEl(itemArr){
@@ -51,5 +56,10 @@ function appendToListEl(itemArr){
 
   endorsementListEl.append(newEl)
   // endorsementListEl.innerHTML += `<li>${itemValue}</li>`
+
+  newEl.addEventListener("click", ()=>{
+    let locationInDB = ref(database, `endorsementList/${itemID}`)
+    remove(locationInDB)
+  })
 
 }
