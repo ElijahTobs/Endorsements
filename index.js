@@ -14,6 +14,19 @@ const database = getDatabase(app)
 const endorsementsInDB = ref(database, "endorsements")
 
 sendBtnEl.addEventListener("click", ()=>{
-  let messageValue = messageEl.value
-  endorsementListEl.innerHTML += `<li>${messageValue}</li>`
+  if (messageEl.value) {
+    let messageValue = messageEl.value
+    clearMessageEl()
+
+    addEndorsementsToListEl(messageValue)
+  }
+  
 })
+
+function addEndorsementsToListEl(value){
+  endorsementListEl.innerHTML += `<li>${value}</li>`
+}
+
+function clearMessageEl(){
+  messageEl.value = ""
+}
