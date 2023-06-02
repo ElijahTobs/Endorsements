@@ -23,8 +23,8 @@ sendBtnEl.addEventListener("click", ()=>{
   
 })
 
-function addEndorsementsToListEl(value){
-  endorsementListEl.innerHTML += `<li>${value}</li>`
+function clearListEl(){
+  endorsementListEl.innerHTML = ""
 }
 
 function clearinputFieldEl(){
@@ -33,6 +33,7 @@ function clearinputFieldEl(){
 
 onValue(endorsementsInDB, (snapshot)=>{
   let endorsementArr = Object.entries(snapshot.val())
+  clearListEl()
 
   for (let x in endorsementArr){
     let currentItem = endorsementArr[x]
