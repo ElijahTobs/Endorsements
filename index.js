@@ -1,24 +1,24 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
   databaseURL: "https://simple-endorsements-default-rtdb.firebaseio.com/"
 }
-const messageEl = document.getElementById("message")
+const inputFieldEl = document.getElementById("message")
 const sendBtnEl = document.getElementById("send-btn")
 const endorsementListEl = document.getElementById("endorsement-list")
 
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
-const endorsementsInDB = ref(database, "endorsements")
+const endorsementsInDB = ref(database, "endorsementList")
 
 sendBtnEl.addEventListener("click", ()=>{
-  if (messageEl.value) {
-    let messageValue = messageEl.value
-    clearMessageEl()
-
-    addEndorsementsToListEl(messageValue)
+  let inputValue = inputFieldEl.value
+  if (inputFieldEl.value) {
+    clearinputFieldEl()
+    // addEndorsementsToListEl(inputFieldValue)
+    push(endorsementsInDB, inputValue)
   }
   
 })
@@ -27,6 +27,28 @@ function addEndorsementsToListEl(value){
   endorsementListEl.innerHTML += `<li>${value}</li>`
 }
 
-function clearMessageEl(){
-  messageEl.value = ""
+function clearinputFieldEl(){
+  inputFieldEl.value = ""
+}
+
+onValue(endorsementsInDB, (snapshot)=>{
+  let endorsementArr = Object.entries(snapshot.val())
+
+  for (let x in endorsementArr){
+    let currentItem = endorsementArr[x]
+
+    appendToListEl(currentItem)
+  }
+})
+
+function appendToListEl(itemArr){
+  let itemID = itemArr[0]
+  let itemValue = itemArr[1]
+
+  const newEl = document.createElement("li")
+  newEl.textContent = itemValue
+
+  endorsementListEl.append(newEl)
+  // endorsementListEl.innerHTML += `<li>${itemValue}</li>`
+
 }

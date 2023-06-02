@@ -10,6 +10,7 @@ body {
   width: 500px;
   border: 2px solid red;
   padding: 20px 30px;
+  background-color: blanchedalmond;
 }
 
 .container img {
@@ -34,4 +35,12 @@ button {
 
 ul {
   list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-top: 10px;
+  /* width: auto; */
 }
