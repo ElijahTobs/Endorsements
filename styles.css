@@ -48,7 +48,7 @@ textarea {
 
 button {
   margin-top: 20px;
-  padding: 5px 10px;
+  padding: 10px;
   background-color: blue;
   color: white;
   font-size: 20px;
@@ -61,21 +61,22 @@ button:hover {
   background-color: green;
 }
 
-ul {
+#endorsement-list {
   list-style: none;
   padding-left: 0;
 }
 
-ul li {
+#endorsement-list p {
   background-color: #fff;
   padding: 10px 20px;
   margin-top: 10px;
   border-top-left-radius: 7px;
   border-bottom-right-radius: 7px;
   cursor: pointer;
+  /* width: 100%; */
 }
 
-ul li:hover {
+#endorsement-list p:hover {
   color:#fff;
   background-color: blueviolet;
 }

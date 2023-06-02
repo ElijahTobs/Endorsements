@@ -19,9 +19,10 @@ sendBtnEl.addEventListener("click", ()=>{
   let messageValue = messageEl.value
   let senderValue = senderEl.value
   let receiverValue = receiverEl.value
+  
   if (messageEl.value) {
     clearmessageEl()
-    // addEndorsementsToListEl(messageValue)
+
     push(endorsementsInDB, [messageValue, senderValue, receiverValue])
   }
   
@@ -59,23 +60,28 @@ function appendToListEl(messageArr){
   let messageSender = messageArr[1][1]
   let messageReceiver = messageArr[1][2]
 
-  // const newEl = document.createElement("li")
-  // newEl.textContent = `${messageValue} <br>      from <strong>${messageSender}</strong>`
+  // const listEl = document.createElement("p")
+  const listEl = document.createElement("p")
 
-  // endorsementListEl.append(newEl)
+  // listEl.textContent = `${messageValue} <br>      from <strong>${messageSender}</strong>`
 
-  endorsementListEl.innerHTML += 
-    `
-      <li>
-        to <strong>${messageReceiver}</strong> 
-        <br><br>
-        ${messageValue} <br><br> 
-        from <strong>${messageSender}</strong>
-      </li>
-    `
+  // divEl.textContent = listEl
+  // endorsementListEl.append(divEl)
 
-  newEl.addEventListener("click", ()=>{
-    let locationInDB = ref(database, `endorsementList/${itemID}`)
+  
+  const listItem = 
+  `
+    to <strong>${messageReceiver}</strong> 
+    <br><br>
+    ${messageValue} <br><br> 
+    from <strong>${messageSender}</strong>
+  `
+  listEl.innerHTML = listItem
+
+  endorsementListEl.append(listEl)
+
+  listEl.addEventListener("click", ()=>{
+    let locationInDB = ref(database, `endorsementList/${messageID}`)
     remove(locationInDB)
   })
 
