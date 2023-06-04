@@ -10,10 +10,12 @@ body {
   width: 500px;
   border: 2px solid red;
   padding: 20px 30px;
-  background-color: blanchedalmond;
+  background-color: #04131C;
+  /* color: #fff; */
 }
 
 h2, h3 {
+  color: #fff;
   text-align: center;
 }
 
@@ -31,6 +33,8 @@ textarea {
   margin-bottom: 10px;
   border-radius: 7px;
   font-size: 18px;
+  background-color: #444059;
+  color: #8F8F8F;
 }
 
 .inputs {
@@ -39,24 +43,28 @@ textarea {
 }
 
 #from, #to {
+  color: #FFF;
   padding: 10px;
   border-radius: 7px;
   border: 1px solid gray;
+  background-color: #444059;
 }
 
 button {
   margin-top: 20px;
   padding: 10px;
-  background-color: blue;
-  color: white;
+  background-color: #28A9F1;
+  color: #04131C;
   font-size: 20px;
   font-weight: 700;
   border-radius: 7px;
   cursor: pointer;
+  border: none;
 }
 
 button:hover {
-  background-color: green;
+  background-color: #197eb4;
+  color: #e1e7eb;
 }
 
 #endorsement-list {
