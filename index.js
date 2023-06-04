@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, unshift, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
@@ -23,7 +23,7 @@ sendBtnEl.addEventListener("click", ()=>{
   if (messageEl.value) {
     clearmessageEl()
 
-    unshift(endorsementsInDB, [messageValue, senderValue, receiverValue])
+    push(endorsementsInDB, [messageValue, senderValue, receiverValue])
   }
   
 })
@@ -89,19 +89,20 @@ function appendToListEl(messageArr){
   likesContainer.insertBefore(likeIcon, likesContainer.firstChild);
 
   likeIcon.addEventListener("click", ()=>{
-    // if (likeIcon.classList.contains("fa-regular")) {
-    //   likeIcon.classList.remove("fa-regular")
-    //   likeIcon.classList.add("fa-solid")
-    // } else {
-    //   likeIcon.classList.remove("fa-solid")
-    //   likeIcon.classList.add("fa-regular")
-    // }
+    if (likeIcon.classList.contains("fa-regular")) {
+      likeIcon.classList.remove("fa-regular")
+      likeIcon.classList.add("fa-solid")
+    } else {
+      likeIcon.classList.remove("fa-solid")
+      likeIcon.classList.add("fa-regular")
+    }
 
-    likeIcon.classList.toggle("fa-solid")
+    // likeIcon.classList.toggle("fa-solid")
   })
 
-  // listEl.querySelector("#likes").appendChild(likeIcon)
-  
+  // -------------------------------------------
+  // ----------FOR DELETING AN ENDORSEMENT------
+  // -------------------------------------------
   // listEl.addEventListener("click", ()=>{
   //   let locationInDB = ref(database, `endorsementList/${messageID}`)
   //   remove(locationInDB)
