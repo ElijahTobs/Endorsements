@@ -61,29 +61,36 @@ function appendToListEl(messageArr){
   let messageReceiver = messageArr[1][2]
 
   const listEl = document.createElement("div")
-  
 
-  // listEl.textContent = `${messageValue} <br>      from <strong>${messageSender}</strong>`
-  // endorsementListEl.append(divEl)
-  const listItem = 
-  `
-    
+  const likeIcon = document.createElement("i")
+  likeIcon.classList.add("fa-heart", "fa-regular", "fa-sharp")
+
+  // <i class="fa-heart fa-regular fa-sharp"></i>
+
+  let listItem = 
+  `    
     <span id="receiver">to ${messageReceiver}<span><br><br>
 
     <span id="">${messageValue} <br><br></span> 
 
     <div id="sender-row">
       <span id="sender">from ${messageSender}</span>
+      
+      <div id="likes">
+        ${likeIcon.outerHTML}
+        <span id="like-count">2</span>
+      </div>
+      
     </div>
-    
   `
+
   listEl.innerHTML = listItem
 
   endorsementListEl.append(listEl)
-
-  listEl.addEventListener("click", ()=>{
-    let locationInDB = ref(database, `endorsementList/${messageID}`)
-    remove(locationInDB)
-  })
+  
+  // listEl.addEventListener("click", ()=>{
+  //   let locationInDB = ref(database, `endorsementList/${messageID}`)
+  //   remove(locationInDB)
+  // })
 
 }

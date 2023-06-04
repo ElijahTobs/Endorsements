@@ -1,5 +1,4 @@
 body {
-  /* margin: auto; */
   width: 100%;
   user-select: none;
 }
@@ -43,7 +42,6 @@ textarea {
   padding: 10px;
   border-radius: 7px;
   border: 1px solid gray;
-  
 }
 
 button {
@@ -76,11 +74,21 @@ button:hover {
   /* width: 100%; */
 }
 
-#endorsement-list div:hover {
+/* #endorsement-list div:hover {
   color:#fff;
   background-color: blueviolet;
-}
+} */
 
 #sender-row {
   padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#likes {
+  border: 2px solid green;
+}
+
+#like-count {
+  padding-left: 10px;
 }
