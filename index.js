@@ -49,7 +49,7 @@ onValue(endorsementsInDB, (snapshot)=>{
       appendToListEl(currentItem)
     }
   } else {
-    endorsementListEl.innerHTML = `<p>No endorsements here yet...</p>`
+    endorsementListEl.innerHTML = `<span>No endorsements here yet...</span>`
   }
  
 })
@@ -60,21 +60,22 @@ function appendToListEl(messageArr){
   let messageSender = messageArr[1][1]
   let messageReceiver = messageArr[1][2]
 
-  // const listEl = document.createElement("p")
-  const listEl = document.createElement("p")
+  const listEl = document.createElement("div")
+  
 
   // listEl.textContent = `${messageValue} <br>      from <strong>${messageSender}</strong>`
-
-  // divEl.textContent = listEl
   // endorsementListEl.append(divEl)
-
-  
   const listItem = 
   `
-    to <strong>${messageReceiver}</strong> 
-    <br><br>
-    ${messageValue} <br><br> 
-    from <strong>${messageSender}</strong>
+    
+    <span id="receiver">to ${messageReceiver}<span><br><br>
+
+    <span id="">${messageValue} <br><br></span> 
+
+    <div id="sender-row">
+      <span id="sender">from ${messageSender}</span>
+    </div>
+    
   `
   listEl.innerHTML = listItem
 
