@@ -71,7 +71,6 @@ button:hover {
   border-top-left-radius: 7px;
   border-bottom-right-radius: 7px;
   cursor: pointer;
-  /* width: 100%; */
 }
 
 /* #endorsement-list div:hover {
@@ -83,12 +82,25 @@ button:hover {
   padding-top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #likes {
   border: 2px solid green;
 }
 
-#like-count {
+/* #like-count {
   padding-left: 10px;
+} */
+
+#likes i {
+  padding-right: 10px;
+}
+
+.span-cont {
+  border: 2px dashed blue;
+}
+
+#receiver, #sender {
+  font-weight: 700;
 }
