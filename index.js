@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, unshift, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
@@ -23,7 +23,7 @@ sendBtnEl.addEventListener("click", ()=>{
   if (messageEl.value) {
     clearmessageEl()
 
-    push(endorsementsInDB, [messageValue, senderValue, receiverValue])
+    unshift(endorsementsInDB, [messageValue, senderValue, receiverValue])
   }
   
 })
