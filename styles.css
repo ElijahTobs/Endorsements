@@ -1,0 +1,145 @@
+body {
+  margin: 20px auto;
+  width: 100%;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+  padding: 20px 30px;
+  background-color: #04131C;
+  /* color: #fff; */
+}
+
+h2, h3 {
+  color: #fff;
+  text-align: center;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+.container img {
+  width: 150px;
+  margin: auto;
+}
+
+textarea {
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  font-size: 18px;
+  background-color: #444059;
+  color: #8F8F8F;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+#from, #to {
+  color: #8F8F8F;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  background-color: #444059;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #28A9F1;
+  color: #04131C;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #197eb4;
+  color: #e1e7eb;
+}
+
+#endorsement-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#endorsement-list > div {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  cursor: pointer;
+}
+
+/* #endorsement-list div:hover {
+  color:#fff;
+  background-color: blueviolet;
+} */
+
+#sender-row {
+  padding-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* #likes {
+  border: 2px solid green;
+} */
+
+/* #like-count {
+  padding-left: 10px;
+} */
+
+#likes i {
+  padding-right: 10px;
+}
+
+.span-cont {
+  border: 2px dashed blue;
+}
+
+#receiver, #sender {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 480px){
+  body {
+    background-color: #04131C;
+    margin: 0;
+    /* margin: 0; */
+    /* overflow: hidden; */
+    /* width: 450px; */
+  }
+
+  .container {
+    max-width: 360px;
+    margin: 15px auto;
+    padding: 10px 15px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  textarea {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  #from, #to {
+    width: 40%;
+  }
+}
