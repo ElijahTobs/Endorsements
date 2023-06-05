@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   margin: auto;
   width: 400px;
-  border: 2px solid red;
   padding: 20px 30px;
   background-color: #04131C;
   /* color: #fff; */
@@ -117,7 +116,6 @@ button:hover {
 @media only screen and (max-width: 480px){
   body {
     background-color: #04131C;
-    border: 2px solid yellow;
     margin: 0;
     /* margin: 0; */
     /* overflow: hidden; */
