@@ -93,9 +93,13 @@ button:hover {
   align-items: center;
 }
 
-/* #likes {
-  border: 2px solid green;
-} */
+#likes {
+  /* border: 2px solid green; */
+  width: 40px;
+  height: 17px;
+  display: flex;
+  justify-content: flex-start;
+}
 
 /* #like-count {
   padding-left: 10px;

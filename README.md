@@ -4,10 +4,10 @@
 
 ## Screenshot
 
-![image](assets/big-screenshot.png)
+![image](assets/laptop.png)
 
 
-![image](assets/small-screenshot.png)
+![image](assets/mobile.png)
 
 ## Description
 

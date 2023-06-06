@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 
 const appSettings = {
@@ -23,7 +23,7 @@ sendBtnEl.addEventListener("click", ()=>{
   if (messageEl.value) {
     clearmessageEl()
 
-    push(endorsementsInDB, [messageValue, senderValue, receiverValue, likesCounter])
+    push(endorsementsInDB, [messageValue, senderValue, receiverValue])
   }
   
 })
@@ -98,7 +98,7 @@ function appendToListEl(messageArr){
       likeCount.innerHTML = counter
     }
     // likeCount.textContent = counter
-
+    // update(endorsementsInDB/messageID, counter)
   }
 
   const likesContainer = listEl.querySelector("#likes");
@@ -107,16 +107,13 @@ function appendToListEl(messageArr){
   likeIcon.addEventListener("click", ()=>{
     if (likeIcon.classList.contains("fa-regular")) {
       counter += 1
-      increaseLikeCount()
-      console.log(likeCount)
-      
+      increaseLikeCount()      
       likeIcon.classList.remove("fa-regular")
       likeIcon.classList.add("fa-solid")
       
     } else {
       counter -= 1
       increaseLikeCount()
-      console.log(likeCount)
       likeIcon.classList.remove("fa-solid")
       likeIcon.classList.add("fa-regular")
     }
