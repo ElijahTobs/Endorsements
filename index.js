@@ -19,11 +19,11 @@ sendBtnEl.addEventListener("click", ()=>{
   let messageValue = messageEl.value
   let senderValue = senderEl.value
   let receiverValue = receiverEl.value
-  
+
   if (messageEl.value) {
     clearmessageEl()
 
-    push(endorsementsInDB, [messageValue, senderValue, receiverValue])
+    push(endorsementsInDB, [messageValue, senderValue, receiverValue, likesCounter])
   }
   
 })
@@ -54,11 +54,16 @@ onValue(endorsementsInDB, (snapshot)=>{
  
 })
 
+let counter = 0
+
 function appendToListEl(messageArr){
   let messageID = messageArr[0]
   let messageValue = messageArr[1][0]
   let messageSender = messageArr[1][1]
   let messageReceiver = messageArr[1][2]
+  // let messageLikes = counter
+  // messageLikes = messageArr[1][3]
+
 
   const listEl = document.createElement("div")
 
@@ -76,7 +81,7 @@ function appendToListEl(messageArr){
       
       <div id="likes">
         
-        <span id="like-count">2</span>
+        <span id="like-count"></span>
       </div>
       
     </div>
@@ -84,15 +89,34 @@ function appendToListEl(messageArr){
   listEl.innerHTML = listItem
   endorsementListEl.append(listEl)
 
+  let likeCount = listEl.querySelector("#like-count")
+ 
+  function increaseLikeCount(){
+    if (!counter) {
+      likeCount.innerHTML = ""
+    } else {
+      likeCount.innerHTML = counter
+    }
+    // likeCount.textContent = counter
+
+  }
 
   const likesContainer = listEl.querySelector("#likes");
   likesContainer.insertBefore(likeIcon, likesContainer.firstChild);
-
+  
   likeIcon.addEventListener("click", ()=>{
     if (likeIcon.classList.contains("fa-regular")) {
+      counter += 1
+      increaseLikeCount()
+      console.log(likeCount)
+      
       likeIcon.classList.remove("fa-regular")
       likeIcon.classList.add("fa-solid")
+      
     } else {
+      counter -= 1
+      increaseLikeCount()
+      console.log(likeCount)
       likeIcon.classList.remove("fa-solid")
       likeIcon.classList.add("fa-regular")
     }
