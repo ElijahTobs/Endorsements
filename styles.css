@@ -11,7 +11,6 @@ body {
   width: 400px;
   padding: 20px 30px;
   background-color: #04131C;
-  /* color: #fff; */
 }
 
 h2, h3 {
@@ -81,11 +80,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* #endorsement-list div:hover {
-  color:#fff;
-  background-color: blueviolet;
-} */
-
 #sender-row {
   padding-top: 0;
   display: flex;
@@ -94,16 +88,11 @@ button:hover {
 }
 
 #likes {
-  /* border: 2px solid green; */
   width: 40px;
   height: 17px;
   display: flex;
   justify-content: flex-start;
 }
-
-/* #like-count {
-  padding-left: 10px;
-} */
 
 #likes i {
   padding-right: 10px;
@@ -121,9 +110,6 @@ button:hover {
   body {
     background-color: #04131C;
     margin: 0;
-    /* margin: 0; */
-    /* overflow: hidden; */
-    /* width: 450px; */
   }
 
   .container {
