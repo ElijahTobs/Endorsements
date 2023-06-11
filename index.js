@@ -61,8 +61,6 @@ function appendToListEl(messageArr){
   let messageValue = messageArr[1][0]
   let messageSender = messageArr[1][1]
   let messageReceiver = messageArr[1][2]
-  // let messageLikes = counter
-  // messageLikes = messageArr[1][3]
 
 
   const listEl = document.createElement("div")
