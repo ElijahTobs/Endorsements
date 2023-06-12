@@ -69,6 +69,8 @@ button:hover {
 #endorsement-list {
   list-style: none;
   padding-left: 0;
+  padding-top: 10px;
+  color: white;
 }
 
 #endorsement-list > div {
