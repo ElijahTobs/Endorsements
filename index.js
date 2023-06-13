@@ -122,9 +122,9 @@ function appendToListEl(messageArr){
   // -------------------------------------------
   // ----------FOR DELETING AN ENDORSEMENT------
   // -------------------------------------------
-  listEl.addEventListener("click", ()=>{
-    let locationInDB = ref(database, `endorsementList/${messageID}`)
-    remove(locationInDB)
-  })
+  // listEl.addEventListener("click", ()=>{
+  //   let locationInDB = ref(database, `endorsementList/${messageID}`)
+  //   remove(locationInDB)
+  // })
 
 }
